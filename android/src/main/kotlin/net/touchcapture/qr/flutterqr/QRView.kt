@@ -213,7 +213,7 @@ class QRView(private val context: Context, messenger: BinaryMessenger, private v
                 allowedBarcodeTypes.add(BarcodeFormat.values()[it])
             }
         } catch (e: java.lang.Exception) {
-            result.error(null, null, null)
+            result.error("", null, null)
         }
 
         barcodeView?.decodeContinuous(
@@ -244,7 +244,7 @@ class QRView(private val context: Context, messenger: BinaryMessenger, private v
                     "hasBackCamera" to hasBackCamera(), "hasFlash" to hasFlash(),
                     "activeCamera" to barcodeView?.cameraSettings?.requestedCameraId))
         } catch (e: Exception) {
-            result.error(null, null, null)
+            result.error("", null, null)
         }
     }
 
