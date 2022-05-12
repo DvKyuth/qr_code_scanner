@@ -10,9 +10,9 @@ import io.flutter.plugin.platform.PlatformViewFactory
 class QRViewFactory(private val messenger: BinaryMessenger) :
         PlatformViewFactory(StandardMessageCodec.INSTANCE) {
 
-    override fun create(context: Context, id: Int, args: Any?): PlatformView {
+    override fun create(context: Context?, viewId: Int, args: Any?): PlatformView {
         val params = args as HashMap<String, Any>
-        return QRView(context, messenger, id, params)
+        return QRView(context!!, messenger, viewId, params)
     }
 
 }
